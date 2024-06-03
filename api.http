@@ -1,0 +1,53 @@
+POST http://localhost:3000/vehicles-loan
+Content-Type: application/json
+
+{
+  "loanAmount": 50000,
+  "loanTerm": 30,
+  "creditScore": 550,
+  "vehicleYear": 1956,
+  "vehicleMileage": 100001
+}
+
+###
+POST http://localhost:3000/vehicles-loan
+Content-Type: application/json
+
+{
+  "loanAmount": 10000,
+  "loanTerm": 20,
+  "creditScore": 800,
+  "vehicleYear": 2018,
+  "vehicleMileage": 8000
+}
+
+###
+POST http://localhost:3000/vehicles-loan
+Content-Type: application/json
+
+{
+"loanAmount": 30000.20,
+  "loanTerm": 30.5,
+  "creditScore": 920.5,
+  "vehicleYear": 1955.6,
+  "vehicleMileage": 10000.3
+}
+
+###
+POST http://localhost:3000/vehicles-loan
+Content-Type: application/json
+
+{
+"loanAmount": -30000.20,
+  "loanTerm": 49,
+  "creditScore": 750,
+  "vehicleYear": -2000,
+  "vehicleMileage": -10000
+}
+
+###
+GET http://localhost:3000/vehicles-loan
+
+
+###
+GET http://localhost:3000/rates

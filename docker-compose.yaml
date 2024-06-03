@@ -1,0 +1,28 @@
+version: '3'
+networks:
+  app-network:
+    driver: bridge
+  
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vehicleLoanDatabase
+    volumes:
+      - ./mysql-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
